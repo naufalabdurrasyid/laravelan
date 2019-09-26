@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
  
 class DaftarStok extends Controller
 {
-    public function index($nama){
+    public function index(){
  
 
-$nama = DB::table('barang masuk')->get();
+$barang_masuk = DB::table('barang_masuk')->get();
  
 
-return view('index',['barang masuk' => $barang]);
+return view('daftarstok',['barang_masuk' => $barang_masuk]);
     }
 
     public function daftar(){
