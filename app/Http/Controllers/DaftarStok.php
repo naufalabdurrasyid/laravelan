@@ -17,15 +17,46 @@ return view('daftarstok',['barang_masuk' => $barang_masuk]);
     }
 
     public function daftar(){
+    	return view('daftarstok');
+}
+
+public function tambah()
+{
+	return view('tambahstok');
+}
+
+public function simpan(Request $request)
+{
+	DB::table('barang_masuk')->insert([
+		'nama' => $request->nama,
+		'jumlah' => $request->jumlah,
+	]);
+	return redirect('/daftar');
  
-    	return view('daftar');
+}
+public function edit($id)
+{
+	$barang_masuk = DB::table('barang_masuk')->where('no_id',$id)->get();
+	return view('updatestok',['barang_masuk' => $barang_masuk]);
  
 }
 
-public function proses(Request $request){
-    $nama = $request->input('nama');
-     $jumlah = $request->input('jumlah');
-    return "Nama Barang : ".$nama.", Jumlah Barang : ".$jumlah;
+public function update(Request $request)
+{
+	
+	DB::table('barang_masuk')->where('no_id',$request->id)->update([
+		'nama' => $request->nama,
+        'jumlah' => $request->jumlah,
+        'tanggal' => $request->tanggal,
+	]);
+
+	return redirect('/daftar');
 }
 
+public function delete($id)
+{
+	DB::table('barang_masuk')->where('no_id',$id)->delete();
+		
+	return redirect('/daftar');
+}
 }

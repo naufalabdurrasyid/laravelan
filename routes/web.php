@@ -14,11 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('barang-masuk', 'DaftarStok@index');
-Route::get('/daftar', 'DaftarStok@daftar');
-Route::post('/catat/barang-masuk', 'DaftarStok@proses');
-
+Route::get('/barang-masuk', 'DaftarStok@index');
+Route::get('/daftar', 'DaftarStok@index');
+Route::get('/barang-masuk/tambah','DaftarStok@tambah');
+Route::post('/barang-masuk/simpan','DaftarStok@simpan');
+Route::get('/barang-masuk/edit/{id}','DaftarStok@edit');
+Route::post('/barang-masuk/update','DaftarStok@update');
+Route::get('/barang-masuk/delete/{id}','DaftarStok@delete');
 Route::get('barang-keluar', function () {
-    return 'Daftar barang keluar dan pencatatan barang keluar';
+    return 'Pemrosesan data barang keluar sedang dalam perbaikan harap tunggu beberapa hari lagi';
 });

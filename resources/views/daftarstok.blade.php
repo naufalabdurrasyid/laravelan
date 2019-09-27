@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Daftar Stok Final Database</title>
+	<title>Naufalrasyid Logistik</title>
 </head>
 <body>
 
-	<h2>List Stok</h2>
-	<h3>Stok</h3>
+	<h2>List Barang Masuk</h2>
+	<a href="/">Kembali ke Halaman Utama</a>
 
-	<a href="/daftar"> + Tambah Barang Masuk</a>
-	
 	<br/>
 	<br/>
 
@@ -28,14 +26,15 @@
 			<td>{{ $b->jumlah }}</td>
 			<td>{{ $b->tanggal }}</td>
 			<td>
-				<a href="/daftar/edit/{{ $b->no_id }}">Edit</a>
+				<a href="/barang-masuk/edit/{{ $b->no_id }}">Edit</a>
 				|
-				<a href="/daftar/hapus/{{ $b->no_id }}">Hapus</a>
+				<a href="/barang-masuk/delete/{{ $b->no_id }}">Delete</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-
+	
+	<a href="/barang-masuk/tambah"> + Tambah Barang Masuk</a>
 
 </body>
 </html>

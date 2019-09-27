@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="/barang-masuk">Daftar Stok</a>
-                    <a href="/daftar">Input Stok</a>
+                    <a href="/barang-masuk/tambah">Input Stok</a>
                     <a href="https://github.com/naufalabdurrasyid">GitHub Naufal</a>
                 </div>
             </div>
